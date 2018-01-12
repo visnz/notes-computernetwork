@@ -47,7 +47,12 @@ HTTP响应报文状态行的状态码
   - 5*：服务器发生错误
   - [具体的状态码列表](https://baike.baidu.com/item/HTTP%E7%8A%B6%E6%80%81%E7%A0%81)
 
+# cookies
+当你访问一个网站的时候，网站发送一个set-cookies(number)请求，在你本地生成一个cookies文件，并在服务器上讲你的主机和number做为一个entry。当你下次访问的时候，浏览器会把存在你本地的cookies的number发过去给服务器，服务器就知道是你了，可以响应特定的动作。
 
+# HTML
+超文本标记语言（英语：HyperText Markup Language，简称：HTML）是一种用于创建网页的标准标记语言。 HTML是一种基础技术，常与CSS、JavaScript一起被众多网站用于设计令人赏心悦目的网页、网页应用程序以及移动应用程序的用户界面
 
-cookies
-  - 当你访问一个网站的时候，网站发送一个set-cookies(number)请求，在你本地生成一个cookies文件，并在服务器上讲你的主机和number做为一个entry。当你下次访问的时候，浏览器会把存在你本地的cookies的number发过去给服务器，服务器就知道是你了，可以响应特定的动作。
+<exampointbig>动态html页面</exampointbig>
+<exampointbig>活动html页面（JavaScript）</exampointbig>
+<exampointbig>CGI程序</exampointbig>
