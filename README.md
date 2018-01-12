@@ -1,3 +1,24 @@
-# My Awesome Book
+# 计算机网络
 
-This file file serves as your book's preface, a great place to describe your book's content and ideas.
+课堂笔记+自学简易笔记+复习习题集锦
+
+本简介与来自 [操作系统笔记](https://visnz.gitbooks.io/os/content/) 的简介内容类似（反正也没啥人看）
+
+
+> ## 本笔记适合
+> - 稍微有计算机基础（数据结构、算法等基础）的朋友
+> 
+> &&
+>
+> - 相同考纲的师弟师妹 || 想要快速了解计算机操作系统工作原理 || 闲着又爱学习又感觉脑壳不够疼的朋友
+>
+>（请按照逻辑和与运算检测）
+
+## 联系方式
+
+- Email: visn0518@gmail.com
+- Telegram: [@visnZ](https://t.me/visnZ)
+- QQ: 864689103(不常在)
+
+## 更多
+其他笔记移步 [作者主页](https://www.gitbook.com/@visnz)
