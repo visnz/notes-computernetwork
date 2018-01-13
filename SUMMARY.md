@@ -6,6 +6,7 @@
   * [互联网性能指标](chapter1/hu-lian-wang-xing-neng-zhi-biao.md)
   * [协议、分层与服务](chapter1/xie-yi-yu-fen-ceng.md)
   * [交换技术](chapter1/fu-wu.md)
+  * [物联网](chapter1/wu-lian-wang.md)
 * [物理层](wu-li-ceng.md)
   * [传输介质](wu-li-ceng/chuan-shu-jie-zhi.md)
   * [无线信道传输](wu-li-ceng/wu-xian-xin-dao-chuan-shu.md)
@@ -25,6 +26,8 @@
   * [基础概念](chuan-shu-ceng/ji-chu-gai-nian.md)
   * [UDP](chuan-shu-ceng/udp.md)
   * [TCP](chuan-shu-ceng/tcp.md)
+  * [NAT](chuan-shu-ceng/nat.md)
+  * 网络代理
 * [应用层](ji-chu-gai-nian.md)
   * [万维网](ji-chu-gai-nian/www.md)
   * [CDN](ji-chu-gai-nian/webhuan-cun-ji-zhu.md)
@@ -36,7 +39,8 @@
   * [FTP](ji-chu-gai-nian/ftp.md)
   * [SSH](ji-chu-gai-nian/ssh.md)
   * [P2P](ji-chu-gai-nian/p2p.md)
-* [网络安全](wang-luo-an-quan.md)
+* [虚拟化与云计算](xu-ni-hua-yu-yun-ji-suan.md)
+* [网络媒体交付](wang-luo-mei-ti-jiao-fu.md)
 * [网络媒体交付](wang-luo-mei-ti-jiao-fu.md)
 * [题目](ti-mu.md)
 
