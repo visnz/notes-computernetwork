@@ -34,6 +34,31 @@
 |192.168.1.59:80|219.152.168.222:9201|
 |192.168.1.155:8080|219.152.168.222:9202|
 
+## 不同类型的NAT
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/4/44/Full_Cone_NAT.svg/800px-Full_Cone_NAT.svg.png)
+完全圆锥型NAT（Full cone NAT），即一对一（one-to-one）NAT
+- 一旦一个内部地址（iAddr:port）映射到外部地址（eAddr:port），所有发自iAddr:port的包都经由eAddr:port向外发送。任意外部主机都能通过给eAddr:port发包到达iAddr:port（注：port不需要一样）
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Restricted_Cone_NAT.svg/800px-Restricted_Cone_NAT.svg.png)
+受限圆锥型NAT（Address-Restricted cone NAT）
+- 内部客户端必须首先发送数据包到对方（IP=X.X.X.X），然后才能接收来自X.X.X.X的数据包。在限制方面，唯一的要求是数据包是来自X.X.X.X。
+- 内部地址（iAddr:port1）映射到外部地址（eAddr:port2），所有发自iAddr:port1的包都经由eAddr:port2向外发送。外部主机（hostAddr:any）能通过给eAddr:port2发包到达iAddr:port1。（注：any指外部主机源端口不受限制，但是目的端口必须是port2。只有外部主机数据包的目的IP 为 内部客户端的ip，且目的端口为port2时数据包才被放行。）
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Port_Restricted_Cone_NAT.svg/800px-Port_Restricted_Cone_NAT.svg.png)
+端口受限圆锥型NAT（Port-Restricted cone NAT）
+类似受限制锥形NAT（Restricted cone NAT），但是还有端口限制。
+- 一旦一个内部地址（iAddr:port1）映射到外部地址（eAddr:port2），所有发自iAddr:port1的包都经由eAddr:port2向外发送。
+- 在受限圆锥型NAT基础上增加了外部主机源端口必须是固定的。
+
+![](https://upload.wikimedia.org/wikipedia/commons/thumb/7/73/Symmetric_NAT.svg/800px-Symmetric_NAT.svg.png)
+对称NAT（Symmetric NAT）
+- 每一个来自相同内部IP与端口，到一个特定目的地地址和端口的请求，都映射到一个独特的外部IP地址和端口。
+同一内部IP与端口发到不同的目的地和端口的信息包，都使用不同的映射
+- 只有曾经收到过内部主机数据的外部主机，才能够把封包发回
+
+
+
 ## NAT用途实例
 - 负载均衡：目的地址转换NAT可以重定向一些服务器的连接到其他随机选定的服务器。
 - 失效终结：目的地址转换NAT可以用来提供高可靠性的服务。如果一个系统有一台通过路由器访问的关键服务器，一旦路由器检测到该服务器宕机，它可以使用目的地址转换NAT透明的把连接转移到一个备份服务器上。
@@ -47,11 +72,12 @@
 ### UDP路由验证
 让位于NAT后的两台主机都与处于公共地址空间的、众所周知的第三台服务器相连，然后，一旦NAT设备建立好UDP状态信息就转为直接通信，并寄希望于NAT设备会在分组其实是从另外一个主机传送过来的情况下仍然保持当前状态。
 
+### IGD
+基于UPnP的**互联网网关设备**标准设备控制协议，一种在网络地址转换（NAT）环境中映射端口的协议，受部分支持NAT的路由器支持。
+![](https://upload.wikimedia.org/wikipedia/commons/3/36/UPnP_discovery_phase.jpg)
 
-
-
-
-
+### [STUN](https://www.wikiwand.com/zh-hans/STUN)
+NAT会话穿越应用程序，它允许位于NAT（或多重NAT）后的客户端找出自己的公网地址，查出自己位于哪种类型的NAT之后以及NAT为某一个本地端口所绑定的Internet端端口。这些信息被用来在两个同时处于NAT路由器之后的主机之间建立UDP通信
 
 ---
 参考资料: [NAT维基百科](https://www.wikiwand.com/zh-hans/%E7%BD%91%E7%BB%9C%E5%9C%B0%E5%9D%80%E8%BD%AC%E6%8D%A2)
